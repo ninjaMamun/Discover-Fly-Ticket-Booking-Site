@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -107,7 +107,74 @@
         </div>
         </section>
 
-        <!--Thank You-->
+        <!-- Order successful summary Start -->
+
+        <section id="success-order" class="">
+            <div class="row ">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <img src="./images/done.svg" alt="">
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <h1>Booking Successfull</h1>
+        
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+        
+                    <h3>Order Summary</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- table starts here -->
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                          <tr>
+                            <th scope="col">Ticket Category</th>
+                            <th scope="col">Price Per Unit</th>
+                            <th scope="col">Unit</th>
+                            <th scope="col">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>First Class</td>
+                            <td>$150</td>
+                            <td id="summary-firstclass-ticket-number">x1</td>
+                            <td id="summary-fristClass-total">$0</td>
+                            
+                          </tr>
+                          <tr>
+                            <td>Economy</td>
+                            <td>$100</td>
+                            <td id="summary-economy-ticket-number">x1</td>
+                            <td id="summary-economy-total">$0</td>
+                          </tr>
+                          
+                        </tbody>
+                        <tfoot id="table-footer">
+                            <tr>
+                                <td colspan="3">Subtotal</td>
+                                <td id="summary-subtotal">$0</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Charge 10% VAT</td>
+                                <td id="summary-vat">$0</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Grandtotal</td>
+                                <td id="summary-total">$0</td>
+                            </tr>
+                        </tfoot>
+                      </table>
+                                       
+                </div>
+            </div>
+        
+        </section>
+
+         <!-- Order successful summary end-->
+    
+        <!-- javascript Start  -->
         <script>
             // first class Plus Button
             document.getElementById("first-class-plus-btn").addEventListener('click', function () {
@@ -144,21 +211,32 @@
             function calculateTotal(){
                 const totalFirstClassTickets = document.getElementById("first-class-ticket-numbers").value;
                 const totalFirstClassTicketsNumber = parseInt(totalFirstClassTickets);
+                document.getElementById("summary-firstclass-ticket-number").innerText = "x" + totalFirstClassTicketsNumber;
+
                 const totalEconomyClassTickets = document.getElementById("economy-class-ticket-numbers").value;
                 const totalEconomyClassTicketsNumber = parseInt(totalEconomyClassTickets);
+                document.getElementById("summary-economy-ticket-number").innerText = "x" + totalEconomyClassTicketsNumber;
 
                 const subtotal = (totalFirstClassTicketsNumber * 150) + (totalEconomyClassTicketsNumber * 100);
                 document.getElementById("subTotal").innerText = "$" + subtotal;
+                document.getElementById("summary-subtotal").innerText = "$" + subtotal;
 
                 const totalVat = subtotal * 0.1;
                 document.getElementById("vat").innerText = "$" + totalVat;
+                document.getElementById("summary-vat").innerText = "$" + totalVat;
 
                 const total = subtotal + totalVat;
                 document.getElementById("total").innerText = "$" + total;
+                document.getElementById("summary-total").innerText = "$" + total;
 
+
+                document.getElementById("summary-fristClass-total").innerText = "$" + (totalFirstClassTicketsNumber * 150);
+                document.getElementById("summary-economy-total").innerText = "$" + (totalEconomyClassTicketsNumber * 100);
             }
 
         </script>
+
+        <!--Thank You-->
 </body>
 
 </html>
