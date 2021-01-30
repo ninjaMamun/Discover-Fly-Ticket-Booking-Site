@@ -136,4 +136,24 @@ nav ul li a:hover, a.active{
     bor
 }
  
+.minus-button{
+    background-color: white;
+    color: #3352F2;
+    margin-top: 15px;
+    padding: 0px;
+    
+}
+.plus-button{
+    background-color: white;
+    color: #3352F2;
+    margin-top: 15px;
+    padding: 0px;
+}
+ 
+#success-order{
+    display: none;
+    
+}
+
+
 
