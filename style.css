@@ -14,6 +14,7 @@ body{
     background-size: cover;
 }
 
+
 nav{
     height: 50px;
     width: 100%;
@@ -139,14 +140,14 @@ nav ul li a:hover, a.active{
 .minus-button{
     background-color: white;
     color: #3352F2;
-    margin-top: 15px;
+    margin-top: 12px;
     padding: 0px;
     
 }
 .plus-button{
     background-color: white;
     color: #3352F2;
-    margin-top: 15px;
+    margin-top: 12px;
     padding: 0px;
 }
  
@@ -154,6 +155,5 @@ nav ul li a:hover, a.active{
     display: none;
     
 }
-
 
 
